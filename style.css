@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #292727;
+    height: 100vh;
+    width: 100%;
+}
+.game{
+    margin: 0 auto;
+    background: #ffffff;
+    width: 50%;
+    height: 75%;
+    padding: 20px;
+    margin-top: 5%;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p{
+    font-size: 1.5em;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+p img:nth-child(1){
+    width: 28px;
+    margin-right: 20px;
+    position: relative;
+    top: 5px;
+}
+p img:nth-child(2){
+    width: 20px;
+    position: relative;
+    top: 5px;
+}
+.tictactoe{
+    width:65%;
+    margin-top: 30px;
+    height: 100%;
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.tictactoe span:nth-child(2){
+    border-left: 2px solid;
+    border-right: 2px solid;
+}
+.tictactoe span:nth-child(4){
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.tictactoe span:nth-child(5){
+    border: 2px solid;
+}
+
+.tictactoe span:nth-child(6){
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.tictactoe span:nth-child(8){
+    border-right: 2px solid;
+    border-left: 2px solid;
+}
+.tictactoe .case{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tictactoe img{
+    width: 50%;
+}
