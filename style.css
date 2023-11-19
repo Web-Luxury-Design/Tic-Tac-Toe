@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: cursive;
 }
 body{
     background: #292727;
@@ -11,9 +12,9 @@ body{
     margin: 0 auto;
     background: #ffffff;
     width: 50%;
-    height: 75%;
+    height: 80%;
     padding: 20px;
-    margin-top: 5%;
+    margin-top: 4%;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
@@ -37,41 +38,75 @@ p img:nth-child(2){
 }
 .tictactoe{
     width:65%;
-    margin-top: 30px;
+    margin-top: 20px;
     height: 100%;
-    background: #ffffff;
+    background: white;
+    border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px;
 }
 
-.tictactoe span:nth-child(2){
-    border-left: 2px solid;
-    border-right: 2px solid;
-}
-.tictactoe span:nth-child(4){
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-}
-
-.tictactoe span:nth-child(5){
-    border: 2px solid;
-}
-
-.tictactoe span:nth-child(6){
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-}
-
-.tictactoe span:nth-child(8){
-    border-right: 2px solid;
-    border-left: 2px solid;
-}
-.tictactoe .case{
+.tictactoe div{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    background: rgb(91, 132, 207);
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    font-size: 5em;
+    font-family: cursive;
+    color: #ffffff;
+    transition: 0.25s ease-in;
+    cursor: pointer;
+}
+.tictactoe div:hover{
+    scale: 0.95;
+    background: rgb(74, 106, 165);
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
 }
 .tictactoe img{
     width: 50%;
+}
+
+
+
+/* div de la fin de partie */
+
+#ShowGameEnd{
+    position: absolute;
+    background: rgba(35, 78, 196, 0.85);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    visibility: hidden;
+}
+#ShowGameEnd h2{
+    font-size: 2em;
+    color: #ffffff;
+}
+p{
+    font-family: cursive;
+}
+#ShowGameEnd p{
+    font-size: 1.8em;
+    color: aliceblue;
+    margin-top: 40px;
+    text-align: center;
+}
+#ShowGameEnd button{
+    background: #ffffff;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    margin-top: 40px;
 }
