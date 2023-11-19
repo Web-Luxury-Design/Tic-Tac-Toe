@@ -1,29 +1,35 @@
+                // Parameter
+
 const cells = [...document.querySelectorAll(".case")];
 console.log(cells);
-const restartBtn=document.querySelector(".restartButton")
+const restartBtn=document.querySelectorAll(".restartButton")
+console.log(restartBtn);
 
-let game=true
-let PLayers = "X";
-let copyCells = [null,null,null,null,null,null,null,null,null];
 
+let game = true;
+let Players = "X";
+let copyCells = [null, null, null, null, null, null, null, null, null];
+
+// début function
 function ChangePlayer() {
-  if (PLayers === "X") {
+  if (Players === "X") {
     PlayerShow.textContent = "c'est au tour du joueur 1";
-  } else {
+  } else{
     PlayerShow.textContent = "c'est au tour du joueur 2";
   }
 }
+
 function ShowGame() {
     cells.forEach((cell) => {
         cell.addEventListener("click", (e) => {
           if (game===true) {
-            if (PLayers === "X") {
+            if (Players === "X") {
                 let fillCell = e.target.id;
                 if (copyCells[fillCell] != 1 && copyCells[fillCell] != 2) {
-                  cells[fillCell].textContent = PLayers;
+                  cells[fillCell].textContent = Players;
                   copyCells[fillCell] = "1";
                   console.log(copyCells);
-                  PLayers = "O";
+                  Players = "O";
                   ToWin()
                   ChangePlayer();
                 } else {
@@ -36,10 +42,10 @@ function ShowGame() {
               } else {
                 let fillCell = e.target.id;
                 if (copyCells[fillCell] != 1 && copyCells[fillCell] != 2) {
-                  cells[fillCell].textContent = PLayers;
+                  cells[fillCell].textContent = Players;
                   copyCells[fillCell] = "2";
                   console.log(copyCells);
-                  PLayers = "X";
+                  Players = "X";
                   ToWin()
                   ChangePlayer();
                 } else {
@@ -63,24 +69,36 @@ function ToWin() {
     for (const condition of winConditions) {
       const [a, b, c] = condition;
       if (copyCells[a] !== null && copyCells[a] === copyCells[b] && copyCells[b] === copyCells[c]) {
-        EndWinPlayer.textContent = `Le joueur ${copyCells[a]} a gagné`;
+        EndWinPlayerP.textContent = `Le joueur ${copyCells[a]} a gagné`;
         game=false
         GameEnd()
         return;
       }
     }
+    // math nul
+    let MatchNul=copyCells.every(index=>index !==null)
+    if (MatchNul) {
+        EndWinPlayerP.textContent = "Personne à gagner!";
+        SpanMessage.innerHTML="Match Nul"
+        game=false
+        GameEnd()
+        return;
+    }
 }
-  
+function btnRestart(){
+    ShowGameEnd.style.visibility="hidden"
+    cells.forEach((cell)=>{
+        cell.textContent="";
+    })
+    copyCells = [null,null,null,null,null,null,null,null,null]
+    game=true
+}
 function GameEnd() {
     ShowGameEnd.style.visibility="visible"
-    restartBtn.addEventListener("click",()=>{
-        ShowGameEnd.style.visibility="hidden"
-        cells.forEach((cell)=>{
-            cell.textContent="";
-        })
-        copyCells = [null,null,null,null,null,null,null,null,null]
-        game=true
-    })
 }
-window.addEventListener("load", ChangePlayer());
+restartBtn.forEach((btn)=>{
+    btn.addEventListener("click",btnRestart)
+})
+
+window.addEventListener("load", ChangePlayer);
 ShowGame();

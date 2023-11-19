@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game">
+    <div class="Show_game">
         <h1>Tic-Tac-Toe</h1>
         <p id="PlayerShow"></p>
-        <div class="tictactoe">
+        <div class="morpion">
             <div class="case" id="0"></div>
             <div class="case" id="1"></div>
             <div class="case" id="2"></div>
@@ -23,9 +23,18 @@
             <div class="case" id="7"></div>
             <div class="case" id="8"></div>
         </div>
+        <div class="parameter">
+            <p>Joueur 1: <span>4</span></p>
+            <p>Joueur 2: <span>4</span></p>
+            <p>Match Null: <span>4</span></p>
+            <button class="restartButton">Recommencer</button>
+        </div>
+
+
         <div id="ShowGameEnd">
             <h2>Fin de partie</h2>
-            <p id="EndWinPlayer"><span>Bravo!!</span></p>
+            <p id="EndWinPlayerP"></p>
+            <span id="SpanMessage">Bravo!!</span>
             <button class="restartButton">Recommencer</button>
         </div>
     </div>
