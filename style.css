@@ -124,10 +124,18 @@ p{
 }
 .bubble{
     content: "";
-    bottom: -100px;
     position: absolute;
     background: #db1414;
     border-radius: 50%;
     border: none;
     transform: translate(-50%,-50%);
+    animation: AnimBubble 8s;
+}
+@keyframes AnimBubble{
+    from{
+        bottom: -100px;
+    }
+    to{
+        top: 0;
+    }
 }
