@@ -25,22 +25,31 @@
         </div>
         <div class="parameter">
             <div>
-                <p>Joueur 1: <span>4</span></p>
-                <p>Joueur 2: <span>4</span></p>
-                <p>Match Nulle: <span>4</span></p>
+                <p>Joueur 1: <span class="ScoreJoueur1"></span></p>
+                <p>Joueur 2: <span class="ScoreJoueur2"></span></p>
+                <p>Match Nulle: <span class="ScoreMatchNull"></span></p>
             </div>
             <button class="restartButton">Recommencer</button>
         </div>
-
-
-        <div id="ShowGameEnd">
-            <h2>Fin de partie</h2>
-            <p id="EndWinPlayerP"></p>
-            <span id="SpanMessage">Bravo!!</span>
+    </div>
+    <div id="ShowGameEnd">
+        <h2>Fin de partie</h2>
+        <p id="EndWinPlayerP"></p>
+        <div class="score">
+            <p>Joueur 1: <span class="ScoreJoueur1"></span></p>
+            <p>Joueur 2: <span class="ScoreJoueur2"></span></p>
+            <p>Match Nulle: <span class="ScoreMatchNull"></span></p>
+        </div>
+        <span id="SpanMessage">Bravo!!</span>
+        <div class="buttonParameter">
+            <button class="RestartScore">Rénitialiser les scores</button>
             <button class="restartButton">Recommencer</button>
+        </div>
+        <div class="generator_bubble">
         </div>
     </div>
 
     <script src="index.js"></script>
+    <script src="index2.js"></script>
 </body>
 </html>

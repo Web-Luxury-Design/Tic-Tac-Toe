@@ -33,12 +33,13 @@ h1{
 p{
     font-size: 1.4em;
     color: rgb(255, 255, 255);
+    transition: 0.15s ease;
 }
 .letter-X{
-    color: orange;
+    color: orange !important;
 }
 .letter-O{
-    color: rgb(116, 20, 160);
+    color: rgb(116, 20, 160) !important;
 }
 .morpion{
     width: 60%;
@@ -52,17 +53,18 @@ p{
     transform: skewY(0deg);
 }
 .case{
-    background: rgba(0, 102, 255, 0.651);
+    border: 1px solid white;
     border-radius: 20px;
     cursor: pointer;
     color: azure;
     font-size: 4em;
     text-align: center;
+    box-shadow: inset 0 0 20px 5px white;
     text-shadow: 5px 2px 8px  rgba(0, 0, 0, 0.575);
 }
 .case:hover{
     scale: 0.9;
-    box-shadow: 0 0 18px 0 white;
+    box-shadow: 0 0 15px 6px rgb(164, 17, 233);
 }
 .parameter{
     display: flex;
@@ -71,21 +73,61 @@ p{
 .parameter p{
     font-size: 1.3em;
 }
+.parameter button{
+    margin: auto;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    transform: skewY(10deg);
+    cursor: pointer;
+}
 
 /* div de la fin de partie */
 
 #ShowGameEnd{
     position: absolute;
-    background: rgba(35, 78, 196, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-    width: 40%;
-    height: 50%;
+    transform: translate(-50%,-50%) skewY(0deg);
+    width: 60%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
     border-radius: 15px;
-    visibility: hidden;
+    visibility: visible;
+}
+#ShowGameEnd p{
+    color: black;
+}
+
+
+
+/* générateur de bulle */
+.generator_bubble{
+    position: absolute;
+    background: #ffffff00;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) skewY(0deg);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    visibility: visible;
+    z-index: -1;
+    overflow: hidden;
+}
+.bubble{
+    content: "";
+    bottom: -100px;
+    position: absolute;
+    background: #db1414;
+    border-radius: 50%;
+    border: none;
+    transform: translate(-50%,-50%);
 }
