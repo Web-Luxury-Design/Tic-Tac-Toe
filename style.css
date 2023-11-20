@@ -6,31 +6,33 @@
 body{
     height: 100vh;
     width: 100%;
-    background: url(imgage/fond\ ecran2.png);
+    background: url(image/fond\ ecran.jpeg);
     background-size: cover;
-    background-position: top;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(0px);
 }
 .Show_game{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background-color: azure;
+    background: #00000015;
     width: 50%;
     height: 90%;
     border-radius: 40px;
-    padding: 10px;
-    box-shadow:
+    box-shadow: 0 0 10px 0 white;
+    transform: skewY(-1deg);
 }
 h1{
-    font-size: 1.8em;
+    font-size: 2em;
+    color: white;
 }
 p{
     font-size: 1.4em;
+    color: rgb(255, 255, 255);
 }
 .letter-X{
     color: orange;
@@ -47,16 +49,28 @@ p{
     gap: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
+    transform: skewY(0deg);
 }
 .case{
-    background: rgb(0, 217, 255);
+    background: rgba(0, 102, 255, 0.651);
     border-radius: 20px;
     cursor: pointer;
+    color: azure;
     font-size: 4em;
     text-align: center;
     text-shadow: 5px 2px 8px  rgba(0, 0, 0, 0.575);
 }
-
+.case:hover{
+    scale: 0.9;
+    box-shadow: 0 0 18px 0 white;
+}
+.parameter{
+    display: flex;
+    gap: 20px;
+}
+.parameter p{
+    font-size: 1.3em;
+}
 
 /* div de la fin de partie */
 
