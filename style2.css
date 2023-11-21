@@ -1,0 +1,17 @@
+/* Full screen */
+
+.fullScreen{
+    scale: 1.4;
+    gap: 12px;
+}
+.Hidden{
+    visibility: hidden;
+}
+
+.fa-compress{
+    font-size: 2.5em;
+    position: absolute;
+    bottom:5%;
+    right: 1%;
+    cursor: pointer;
+}

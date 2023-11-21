@@ -12,18 +12,37 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    backdrop-filter: blur(0px);
+    cursor: default;
+    overflow: hidden;
 }
 .Show_game{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    background: #00000015;
     width: 50%;
     height: 90%;
     border-radius: 40px;
-    box-shadow: 0 0 10px 0 white;
+    background: #00000013;
+    box-shadow: 0 0 10px 5px rgb(177, 112, 214) , 0 10px 1px rgb(177, 112, 214);
+    transition: background 1s;
+    animation: animShowGame 2s;
+}
+.Show_game:hover{
+    background: #0000003d;
+}
+@keyframes animShowGame {
+    0%{
+        scale: 0.1;
+        background: #ffffff;
+    }
+    80%{
+        scale: 1.1;
+    }
+    100%{
+        scale: 1;
+    }
 }
 .Show_game p{
     color: white;
@@ -35,7 +54,7 @@ h1{
 }
 
 .letter-X{
-    color: orange !important;
+    color: rgb(255, 230, 0) !important;
     text-shadow: 0 10px 10px  rgb(255, 13, 215) !important;
 }
 .letter-O{
@@ -53,6 +72,9 @@ h1{
     margin-bottom: 10px;
 }
 .case{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid white;
     border-radius: 20px;
     cursor: pointer;
@@ -61,6 +83,7 @@ h1{
     text-align: center;
     box-shadow: inset 0 0 20px 5px white;
     text-shadow: 5px 2px 8px  rgba(0, 0, 0, 0.575);
+    backdrop-filter: blur(0.5px);
 }
 .case:hover{
     scale: 0.9;
@@ -68,7 +91,8 @@ h1{
 }
 .parameter{
     display: flex;
-    gap: 50px;
+    position: relative;
+    width: 80%;
 }
 .parameter button{
     margin: auto;
@@ -89,6 +113,13 @@ h1{
     color: white;
     font-size: 1.2em;
 }
+.fa-expand{
+    font-size: 2.5em;
+    position: absolute;
+    bottom:5%;
+    right: 5%;
+    cursor: pointer;
+}
 
 
 
@@ -101,7 +132,7 @@ h1{
     background: rgba(255, 255, 255, 0.95);
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%) skewY(0deg);
+    transform: translate(-50%,50%);
     width: 60%;
     height: 80%;
     display: flex;
@@ -111,6 +142,7 @@ h1{
     border-radius: 15px;
     visibility: hidden;
     box-shadow: 0 15px 2px rgb(214, 212, 212) , 0 0 30px 0 rgb(175, 171, 171);
+    transition: 0.25s ease-out;
 }
 #ShowGameEnd p{
     font-size: 2.2em;
@@ -161,8 +193,8 @@ h1{
     transition: 0.5s;
 }
 .affichage .buttonParameter .RestartScore:hover{
-    box-shadow: inset 0 3px 10px rgb(8, 185, 52);
-    margin-top: 10px;
+    box-shadow: inset 0 0px 20px rgb(3, 119, 32);
+    margin-top: 5px;
     scale: 0.99;
     cursor: pointer;
 }
@@ -175,12 +207,12 @@ h1{
     background: rgb(57, 3, 253);
     color: white;
     font-size: 1.5em;
-    box-shadow: 0 10px 1px rgb(46, 8, 185) ,0 0px 20px rgba(46, 8, 185, 0.568);
+    box-shadow: 0 -10px 1px rgb(46, 8, 185) ,0 0px 20px rgba(46, 8, 185, 0.568);
     transition: 0.5s;
 }
 .affichage .buttonParameter .restartButton:hover{
-    box-shadow: inset 0 3px 10px rgb(46, 8, 185);
-    margin-top: 10px;
+    box-shadow: inset 0 0px 15px rgb(23, 3, 95);
+    margin-top: 5px;
     scale: 0.99;
     cursor: pointer;
 }
@@ -229,5 +261,34 @@ h1{
         left: var(--left);
         opacity: 1;
         filter: hue-rotate(400deg);
+    }
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media (min-width: 1300px) {
+    p{
+        font-size: 1.9em !important;
+    }
+    h1{
+        font-size: 2.5em ;
+    }
+    h2{
+        font-size: 2.2em;
+    }
+    .case{
+        font-size: 6.5em;
+    }
+    button{
+        font-size: 1.8em !important;
+    }
+    .affichage{
+        margin-top: 100px;
+    }
+    .parameter .fa-expand{
+        font-size: 4em;
     }
 }

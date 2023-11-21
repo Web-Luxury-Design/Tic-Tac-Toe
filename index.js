@@ -18,6 +18,9 @@ let scoreMN=0
 let Players = "X";
 let copyCells = [null, null, null, null, null, null, null, null, null];
 
+//anim fonction
+
+
 // début function
 function ChangePlayer() {
   if (Players === "X") {
@@ -113,6 +116,8 @@ function ToWin() {
 }
 function btnRestart(){
     ShowGameEnd.style.visibility="hidden"
+    ShowGameEnd.style.transform="translate(-50%,50%)"
+
     cells.forEach((cell)=>{
         cell.textContent="";
     })
@@ -123,6 +128,7 @@ function btnRestart(){
 }
 function GameEnd() {
     ShowGameEnd.style.visibility="visible"
+    ShowGameEnd.style.transform="translate(-50%,-50%)"
     Morpion.style.filter="blur(2px)"
     Morpion.style.opcity="0.7"
     interval=setInterval(generatorBubbles,200)
@@ -147,5 +153,38 @@ btnInitScore.addEventListener("click",()=>{
     MN.textContent=""
   })
 })
+
+
+
+
+
+
+// Full Screen BTN
+
+const CaseMorpion=document.querySelector(".morpion")
+const DivParametre=document.querySelector(".parameter")
+const titre=document.querySelector("h1")
+let FullScreen=true
+
+function IconeFullScreen(){
+  if(FullScreen){
+    BtnFullScreen.classList.add("fa-compress")
+    BtnFullScreen.classList.remove("fa-expand")
+    FullScreen=false
+  }else{
+    BtnFullScreen.classList.remove("fa-compress")
+    BtnFullScreen.classList.add("fa-expand")
+    FullScreen=true
+  }
+}
+
+BtnFullScreen.addEventListener("click",()=>{
+    IconeFullScreen()
+    CaseMorpion.classList.toggle("fullScreen")
+    DivParametre.classList.toggle("Hidden")
+    PlayerShow.classList.toggle("Hidden")
+    titre.classList.toggle("Hidden")
+})
+
 window.addEventListener("load", ChangePlayer);
 ShowGame();
