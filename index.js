@@ -5,9 +5,9 @@ console.log(cells);
 const restartBtn=document.querySelectorAll(".restartButton")
 console.log(restartBtn);
 const Morpion=document.querySelector(".Show_game")
-const ScorePlayer1=document.querySelector(".ScoreJoueur1")
-const ScorePlayer2=document.querySelector(".ScoreJoueur2")
-const ScoreMatchNull=document.querySelector(".ScoreMatchNull")
+const ScorePlayer1=document.querySelectorAll(".ScoreJoueur1")
+const ScorePlayer2=document.querySelectorAll(".ScoreJoueur2")
+const ScoreMatchNull=document.querySelectorAll(".ScoreMatchNull")
 
 
 let game = true;
@@ -22,7 +22,7 @@ let copyCells = [null, null, null, null, null, null, null, null, null];
 function ChangePlayer() {
   if (Players === "X") {
     PlayerShow.textContent = "c'est au tour du joueur 1";
-  } else{
+  } else if(Players==="O"){
     PlayerShow.textContent = "c'est au tour du joueur 2";
   }
 }
@@ -65,7 +65,8 @@ function ShowGame() {
                   return;
                 }
               }
-              Players=="X" ? Players="O" : Players="X"
+              Players==="X" ? Players="O" : Players="X"
+              ChangePlayer()
             };
           })
     });        
@@ -82,10 +83,14 @@ function ToWin() {
         EndWinPlayerP.textContent = `Le joueur ${copyCells[a]} a gagné`;
         if (copyCells[a]==1) {
           scoreP1++
-          ScorePlayer1.textContent= scoreP1<10 ? "0" +scoreP1 :scoreP1
+          ScorePlayer1.forEach((P1)=>{
+            P1.textContent=scoreP1<10 ? "0"+scoreP1 : scoreP1
+          })
         } else if(copyCells[a]==2) {
           scoreP2++
-          ScorePlayer2.textContent= scoreP2<10 ? "0" +scoreP2 :scoreP2
+          ScorePlayer2.forEach((P2)=>{
+            P2.textContent=scoreP1<10 ? "0"+scoreP1 : scoreP1
+          })
         }
         game=false
         GameEnd()
@@ -98,7 +103,9 @@ function ToWin() {
         EndWinPlayerP.textContent = "Personne à gagner!";
         SpanMessage.innerHTML="Match Nul"
         scoreMN++;
-        ScoreMatchNull.textContent= scoreMN<10 ? "0" +scoreMN :scoreMN
+        ScoreMatchNull.forEach((MN)=>{
+          MN.textContent=scoreMN<10 ? "0"+scoreMN : scoreMN
+        })
         game=false
         GameEnd()
         return;
@@ -111,6 +118,7 @@ function btnRestart(){
     })
     copyCells = [null,null,null,null,null,null,null,null,null]
     Players="X"
+    ChangePlayer()
     game=true
 }
 function GameEnd() {
@@ -125,6 +133,19 @@ restartBtn.forEach((btn)=>{
       Morpion.style.filter="blur(0px)"
     })
 })
-
+btnInitScore.addEventListener("click",()=>{
+  scoreP1=0
+  scoreP2=0
+  scoreMN=0
+  ScorePlayer1.forEach((P1)=>{
+    P1.textContent=""
+  })
+  ScorePlayer2.forEach((P2)=>{
+    P2.textContent=""
+  })
+  ScoreMatchNull.forEach((MN)=>{
+    MN.textContent=""
+  })
+})
 window.addEventListener("load", ChangePlayer);
 ShowGame();

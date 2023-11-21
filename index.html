@@ -25,8 +25,8 @@
         </div>
         <div class="parameter">
             <div>
-                <p>Joueur 1: <span class="ScoreJoueur1"></span></p>
-                <p>Joueur 2: <span class="ScoreJoueur2"></span></p>
+                <p>Joueur 1 : <span class="ScoreJoueur1"></span></p>
+                <p>Joueur 2 : <span class="ScoreJoueur2"></span></p>
                 <p>Match Nulle: <span class="ScoreMatchNull"></span></p>
             </div>
             <button class="restartButton">Recommencer</button>
@@ -35,15 +35,17 @@
     <div id="ShowGameEnd">
         <h2>Fin de partie</h2>
         <p id="EndWinPlayerP"></p>
-        <div class="score">
-            <p>Joueur 1: <span class="ScoreJoueur1"></span></p>
-            <p>Joueur 2: <span class="ScoreJoueur2"></span></p>
-            <p>Match Nulle: <span class="ScoreMatchNull"></span></p>
-        </div>
-        <span id="SpanMessage">Bravo!!</span>
-        <div class="buttonParameter">
-            <button class="RestartScore">Rénitialiser les scores</button>
-            <button class="restartButton">Recommencer</button>
+        <p id="SpanMessage">Bravo!!</p>
+        <div class="affichage">
+            <div class="score">
+                <p>Joueur 1 : <span class="ScoreJoueur1">00</span></p>
+                <p>Joueur 2 : <span class="ScoreJoueur2">00</span></p>
+                <p>Match Nulle: <span class="ScoreMatchNull">00</span></p>
+            </div>
+            <div class="buttonParameter">
+                <button id="btnInitScore" class="RestartScore">Rénitialiser les scores</button>
+                <button class="restartButton">Recommencer</button>
+            </div>
         </div>
         <div class="generator_bubble">
         </div>

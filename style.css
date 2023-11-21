@@ -24,22 +24,23 @@ body{
     height: 90%;
     border-radius: 40px;
     box-shadow: 0 0 10px 0 white;
-    transform: skewY(-1deg);
+}
+.Show_game p{
+    color: white;
+    font-size: 1.2em;
 }
 h1{
     font-size: 2em;
-    color: white;
-}
-p{
-    font-size: 1.4em;
     color: rgb(255, 255, 255);
-    transition: 0.15s ease;
 }
+
 .letter-X{
     color: orange !important;
+    text-shadow: 0 10px 10px  rgb(255, 13, 215) !important;
 }
 .letter-O{
-    color: rgb(116, 20, 160) !important;
+    color: rgb(255, 255, 255) !important;
+    text-shadow: 0 5px 15px  rgb(0, 60, 255) !important;
 }
 .morpion{
     width: 60%;
@@ -50,7 +51,6 @@ p{
     gap: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    transform: skewY(0deg);
 }
 .case{
     border: 1px solid white;
@@ -68,21 +68,33 @@ p{
 }
 .parameter{
     display: flex;
-    gap: 20px;
-}
-.parameter p{
-    font-size: 1.3em;
+    gap: 50px;
 }
 .parameter button{
     margin: auto;
     padding: 12px 15px;
     border: none;
     border-radius: 10px;
-    transform: skewY(10deg);
     cursor: pointer;
+    background: rgb(0, 255, 221);
+    font-size: 1.2em;
+    box-shadow: 0 6px 1px rgb(7, 190, 166) , 0 0 20px 2px rgb(0, 255, 221) ;
+}
+.parameter button:hover{
+    box-shadow: inset 0 0 20px 2px rgb(5, 197, 171) , 0 0 20px 2px rgb(9, 231, 202);
+    position: relative;
+    top: 5px;
+}
+.parameter p{
+    color: white;
+    font-size: 1.2em;
 }
 
-/* div de la fin de partie */
+
+
+
+                      /* affichage de la fin de partie */
+
 
 #ShowGameEnd{
     position: absolute;
@@ -98,14 +110,92 @@ p{
     padding: 10px;
     border-radius: 15px;
     visibility: hidden;
+    box-shadow: 0 15px 2px rgb(214, 212, 212) , 0 0 30px 0 rgb(175, 171, 171);
 }
 #ShowGameEnd p{
-    color: black;
+    font-size: 2.2em;
+    margin-bottom: 5px;
+}
+#ShowGameEnd h2{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    border-bottom: 3px solid;
+    margin-bottom: 10px;
+}
+.affichage{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    width: 90%;
+    height: 100%;
+}
+.affichage .score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    background: #5c0f88;
+    border-radius: 20px;
+    padding: 30px;
+    width: 65%;
+    height: 50%;
+    box-shadow: 0 -10px 1px #4a0c6d , 0 0 10px 0 #5c0f88 ;
+}
+.affichage .buttonParameter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+}
+.affichage .buttonParameter .RestartScore{
+    padding: 10px;
+    text-align: center;
+    width: 70%;
+    border: none;
+    border-radius: 20px;
+    background: rgb(7, 150, 38);
+    color: white;
+    font-size: 1.5em;
+    box-shadow: 0 -10px 1px rgb(17, 134, 7) ,0 0px 20px rgba(8, 185, 61, 0.568);
+    transition: 0.5s;
+}
+.affichage .buttonParameter .RestartScore:hover{
+    box-shadow: inset 0 3px 10px rgb(8, 185, 52);
+    margin-top: 10px;
+    scale: 0.99;
+    cursor: pointer;
+}
+.affichage .buttonParameter .restartButton{
+    padding: 10px;
+    text-align: center;
+    width: 70%;
+    border: none;
+    border-radius: 20px;
+    background: rgb(57, 3, 253);
+    color: white;
+    font-size: 1.5em;
+    box-shadow: 0 10px 1px rgb(46, 8, 185) ,0 0px 20px rgba(46, 8, 185, 0.568);
+    transition: 0.5s;
+}
+.affichage .buttonParameter .restartButton:hover{
+    box-shadow: inset 0 3px 10px rgb(46, 8, 185);
+    margin-top: 10px;
+    scale: 0.99;
+    cursor: pointer;
+}
+.affichage .score p{
+    color: azure;
+    font-size: 2em;
+}
+.affichage .score span{
+    color: rgb(255, 255, 255);
 }
 
 
 
-/* générateur de bulle */
+
+                           /* générateur de bulle */
 .generator_bubble{
     position: absolute;
     background: #ffffff00;
