@@ -1,7 +1,9 @@
 /* Full screen */
 
 .fullScreen{
-    scale: 1.4;
+    margin-top: 10px;
+    margin-bottom: 0;
+    scale: 1.3;
     gap: 12px;
 }
 .Hidden{
