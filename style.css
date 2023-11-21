@@ -97,7 +97,7 @@ p{
     align-items: center;
     padding: 10px;
     border-radius: 15px;
-    visibility: visible;
+    visibility: hidden;
 }
 #ShowGameEnd p{
     color: black;
@@ -118,7 +118,7 @@ p{
     flex-direction: column;
     align-items: center;
     border-radius: 15px;
-    visibility: visible;
+    visibility: hidden;
     z-index: -1;
     overflow: hidden;
 }
@@ -129,13 +129,15 @@ p{
     border-radius: 50%;
     border: none;
     transform: translate(-50%,-50%);
-    animation: AnimBubble 8s;
+    opacity: 0;
+    filter: hue-rotate(0);
+    animation: Anim 5s forwards;
 }
-@keyframes AnimBubble{
-    from{
-        bottom: -100px;
-    }
+@keyframes Anim{
     to{
-        top: 0;
+        top: -250px;
+        left: var(--left);
+        opacity: 1;
+        filter: hue-rotate(400deg);
     }
 }

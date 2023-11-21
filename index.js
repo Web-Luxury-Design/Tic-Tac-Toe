@@ -117,9 +117,13 @@ function GameEnd() {
     ShowGameEnd.style.visibility="visible"
     Morpion.style.filter="blur(2px)"
     Morpion.style.opcity="0.7"
+    interval=setInterval(generatorBubbles,200)
 }
 restartBtn.forEach((btn)=>{
-    btn.addEventListener("click",btnRestart)
+    btn.addEventListener("click",()=>{
+      btnRestart()
+      Morpion.style.filter="blur(0px)"
+    })
 })
 
 window.addEventListener("load", ChangePlayer);
